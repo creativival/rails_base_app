@@ -17,7 +17,7 @@ PostgeSQL 12.4
 クローン
 
 ```
-$ cd <rails_apps>
+$ cd <rails_apps_directory>
 $ git clone https://github.com/creativival/voice_origami.git
 $ cd voice_origami
 ```
@@ -41,9 +41,7 @@ $ bundle exec rails db:migrate RAILS_ENV=test
 Yarn
 
 ```
-$ yarn add bootstrap@4.3.1 jquery popper.js
-$ yarn add @fortawesome/fontawesome-free
-
+$ yarn add
 ```
 # Usage
  
