@@ -144,3 +144,16 @@ ja:
       not_saved:
         one: エラーが発生したため %{resource} は保存されませんでした。
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
+  header:
+    title: Sample App
+    home: ホーム
+    user_pages: ユーザーページ
+    admin_pages: 管理者ページ
+    log_in: ログイン
+    log_out: ログアウト
+    sign_up: ユーザー登録
+    user_info: ユーザー情報
+    settings: 設定変更
+    users_list: ユーザ一リスト
+
+

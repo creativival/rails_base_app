@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <%= link_to t('header.title'), root_path, class: 'navbar-brand' %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,18 +7,18 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to 'Home', root_path, class: 'nav-link' %>
+        <%= link_to t('header.home'), root_path, class: 'nav-link' %>
       </li>
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
+            <%=  t('header.user_pages') %>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to 'My Page', user_path(current_user), class: "dropdown-item" %>
-            <%= link_to 'Settings', edit_user_registration_path, class: "dropdown-item" %>
-            <%= link_to 'Logout', destroy_user_session_path, class: "dropdown-item", method: :delete %>
+            <%= link_to t('header.user_info'), user_path(current_user), class: "dropdown-item" %>
+            <%= link_to t('header.settings'), edit_user_registration_path, class: "dropdown-item" %>
             <a class="dropdown-item" href="#">Another action</a>
+            <%= link_to t('header.log_out'), destroy_user_session_path, class: 'dropdown-item', method: :delete %>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
@@ -26,10 +26,10 @@
         <% if true #current_user.admin %>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Admin
+              <%=  t('header.admin_pages') %>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to 'Users List', users_path, class: "dropdown-item" %>
+              <%= link_to t('header.users_list'), users_path, class: "dropdown-item" %>
               <a class="dropdown-item" href="#">Another action</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Something else here</a>
@@ -41,10 +41,10 @@
         <% end %>
       <% else %>
         <li class="nav-item">
-          <%= link_to 'Log in', new_user_session_path, class: 'nav-link' %>
+          <%= link_to t('header.log_in'), new_user_session_path, class: 'nav-link' %>
         </li>
         <li class="nav-item">
-          <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
+          <%= link_to t('header.sign_up'), new_user_registration_path, class: 'nav-link' %>
         </li>
       <% end %>
     </ul>
