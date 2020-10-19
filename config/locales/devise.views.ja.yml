@@ -149,8 +149,8 @@ ja:
     home: ホーム
     user_pages: ユーザーページ
     admin_pages: 管理者ページ
-    log_in: ログイン
-    log_out: ログアウト
+    sign_in: ログイン
+    sign_out: ログアウト
     sign_up: ユーザー登録
     user_info: ユーザー情報
     settings: 設定変更

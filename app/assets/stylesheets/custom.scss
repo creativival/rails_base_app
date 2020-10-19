@@ -1,4 +1,7 @@
+@import "../../../node_modules/bootswatch/dist/minty/variables";
 @import "../../../node_modules/bootstrap/scss/bootstrap";
+@import "../../../node_modules/bootswatch/dist/minty/bootswatch";
+//@import "../../../node_modules/bootstrap-honoka/dist/css/bootstrap";
 
 .red { /// 適用されるかテスト
    color: $red;
@@ -88,11 +91,11 @@
  -------------------------------------------------- */
  /* Not required for template or sticky footer method. */
 
- .container {
-   width: auto;
-   max-width: 680px;
-   padding: 0 15px;
- }
- .container .text-muted {
-   margin: 20px 0;
- }
+ //.container {
+ //  width: auto;
+ //  max-width: 680px;
+ //  padding: 0 15px;
+ //}
+ //.container .text-muted {
+ //  margin: 20px 0;
+ //}
