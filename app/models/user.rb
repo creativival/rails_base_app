@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :profile, length: { maximum: Settings.user.profile_length }
+
+  has_one_attached :avatar
 end
