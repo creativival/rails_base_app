@@ -34,15 +34,11 @@ Rails 初期設定
 
 ```
 $ bundle install
-$ bundle exec rails db:migrate RAILS_ENV=development
-$ bundle exec rails db:migrate RAILS_ENV=test
+$ yarn install
+$ bundle exec rails db:migrate
+$ bundle exec rails server
 ```
 
-Yarn
-
-```
-$ yarn add
-```
 # Usage
  
 DEMOの実行方法など、"hoge"の基本的な使い方を説明する

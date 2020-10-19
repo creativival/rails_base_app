@@ -38,3 +38,7 @@ yarn-debug.log*
 
 # Ignore IDE settings
 /.idea
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml

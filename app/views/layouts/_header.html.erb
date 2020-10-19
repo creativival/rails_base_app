@@ -12,10 +12,10 @@
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%=  t('header.user_pages') %>
+            <%=  t('header.account') %>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to t('header.user_info'), user_path(current_user), class: "dropdown-item" %>
+            <%= link_to t('header.account_info'), user_path(current_user), class: "dropdown-item" %>
             <%= link_to t('header.settings'), edit_user_registration_path, class: "dropdown-item" %>
             <a class="dropdown-item" href="#">Another action</a>
             <%= link_to t('header.sign_out'), destroy_user_session_path, class: 'dropdown-item', method: :delete %>

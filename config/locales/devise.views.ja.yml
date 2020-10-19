@@ -26,6 +26,7 @@ ja:
         unlock_token: ロック解除用トークン
         updated_at: 更新日
         name: 名前
+        profile: プロフィール
     models:
       user: ユーザ
   devise:
@@ -147,13 +148,19 @@ ja:
   header:
     title: Sample App
     home: ホーム
-    user_pages: ユーザーページ
+    account: アカウント
     admin_pages: 管理者ページ
     sign_in: ログイン
     sign_out: ログアウト
     sign_up: ユーザー登録
-    user_info: ユーザー情報
+    account_info: アカウント情報
     settings: 設定変更
     users_list: ユーザ一リスト
+  users:
+    show:
+      account_info: "%{name}様のアカウント情報"
+      name: 名前
+      email: Eメール
+      profile: プロフィール
 
 

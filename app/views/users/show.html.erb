@@ -1,2 +1,6 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container">
+  <h1><%= t('.account_info', { name: @user.name }) %></h1>
+  <p><%= t('.name') %>: <%= @user.name %></p>
+  <p><%= t('.email') %>: <%= @user.email %></p>
+  <p><%= t('.profile') %>: <%= @user.profile %></p>
+</div>
