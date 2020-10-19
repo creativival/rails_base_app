@@ -9,11 +9,11 @@ module HeaderHelper
         return ' active'
       end
     when 'sign_in'
-      if (controller == 'devise/sessions' && action == 'new')
+      if (controller == 'users/sessions' && action == 'new')
         return ' active'
       end
     when 'sign_up'
-      if (controller == 'devise/registrations' && action == 'new')
+      if (controller == 'users/registrations' && action == 'new')
         return ' active'
       end
     else
