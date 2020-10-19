@@ -1,9 +1,68 @@
- .red {
-   font-size: 2rem;
-   color: red;
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+.red { /// 適用されるかテスト
+   color: $red;
  }
 
+ /* universal */
 
+ body {
+   padding-top: 60px;
+ }
+
+ section {
+   overflow: auto;
+ }
+
+ textarea {
+   resize: vertical;
+ }
+
+ .center {
+   text-align: center;
+   h1 {
+     margin-bottom: 10px;
+   }
+ }
+
+ /* typography */
+
+ h1, h2, h3, h4, h5, h6 {
+   line-height: 1;
+ }
+
+ h1 {
+   font-size: 3em;
+   letter-spacing: -2px;
+   margin-top: 30px;
+   margin-bottom: 30px;
+   text-align: center;
+ }
+
+ h2 {
+   font-size: 2em;
+   letter-spacing: -1px;
+   margin-top: 30px;
+   margin-bottom: 30px;
+   text-align: center;
+   font-weight: normal;
+   color: $gray-900;
+ }
+
+  h3 {
+    font-size: 1.2em;
+    letter-spacing: -1px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: normal;
+    color: $gray-600;
+  }
+
+ p {
+   font-size: 1.1em;
+   line-height: 1.7em;
+ }
 
  /* Sticky footer styles
 -------------------------------------------------- */
