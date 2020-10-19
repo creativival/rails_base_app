@@ -97,7 +97,7 @@ ja:
         cancel_my_account: アカウント削除
         currently_waiting_confirmation_for_email: "%{email} の確認待ち"
         leave_blank_if_you_don_t_want_to_change_it: 空欄のままなら変更しません
-        title: "%{resource}編集"
+        title: アカウント変更
         unhappy: 気に入りません
         update: 更新
         we_need_your_current_password_to_confirm_your_changes: 変更を反映するには現在のパスワードを入力してください
@@ -107,6 +107,7 @@ ja:
         sign_up: アカウント登録
         password: パスワード
       signed_up: アカウント登録が完了しました。
+      signed_up_and_edit: アカウント登録が完了しました。次にアカウント情報を編集してください。
       signed_up_but_inactive: ログインするためには、アカウントを有効化してください。
       signed_up_but_locked: アカウントが凍結されているためログインできません。
       signed_up_but_unconfirmed: 本人確認用のメールを送信しました。メール内のリンクからアカウントを有効化させてください。
@@ -154,7 +155,7 @@ ja:
     sign_out: ログアウト
     sign_up: ユーザー登録
     account_info: アカウント情報
-    settings: 設定変更
+    account_edit: アカウント変更
     users_list: ユーザ一リスト
   users:
     show:
