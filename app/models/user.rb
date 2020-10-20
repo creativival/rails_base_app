@@ -6,18 +6,10 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :profile, length: { maximum: Settings.user.profile_length }
+  validates :avatar,   content_type: { in: %w[image/jpeg image/gif image/png],
+                                      message: I18n.t('errors.messages.file_type_not_image') },
+            size:         { less_than: 5.megabytes,
+                            message: I18n.t('errors.messages.file_too_large') }
 
   has_one_attached :avatar
-
-  def display_avatar_large
-    avatar.variant(gravity: :center, resize:"240x240^", crop:"240x240+0+0").processed
-  end
-
-  def display_avatar_middle
-    avatar.variant(gravity: :center, resize:"120x120^", crop:"120x120+0+0").processed
-  end
-
-  def display_avatar_small
-    avatar.variant(gravity: :center, resize:"80x80^", crop:"80x80+0+0").processed
-  end
 end

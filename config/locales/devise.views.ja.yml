@@ -147,6 +147,8 @@ ja:
       not_saved:
         one: エラーが発生したため %{resource} は保存されませんでした。
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
+      file_too_large: ファイルが大きすぎます (5 MB 以下)。
+      file_type_not_image: 画像ファイルを選択してください（jpeg, png, gif）。
   header:
     title: Sample App
     home: ホーム

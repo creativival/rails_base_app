@@ -4,6 +4,8 @@
   <%= bootstrap_form_with(model: @user, url: registration_path(resource_name), method: :put, local: true) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
+    <%#= f.hidden_field :id, value: @user.id %>
+
     <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
 
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -11,8 +13,8 @@
     <%= f.text_area :profile, autofocus: true, autocomplete: "profile" %>
 
     <div class="user_avatar_middle">
-      <% if (@user.avatar.attached?) %>
-        <%= image_tag @user.display_avatar_middle, class: 'user_avatar' %>
+      <% if @user.avatar.attached? %>
+        <%= image_tag display_avatar_middle(@user), class: 'user_avatar' %>
       <% else %>
         <%= image_tag 'unknown.png', class: 'user_avatar' %>
       <% end %>

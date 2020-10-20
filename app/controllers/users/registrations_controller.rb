@@ -24,6 +24,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super
     if account_update_params[:avatar].present?
       resource.avatar.attach(account_update_params[:avatar])
+      return false
     end
   end
 
@@ -65,16 +66,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
 
-  def after_sign_up_path_for(resource)
-    flash[:notice] = t('devise.registrations.signed_up_and_edit')
-    edit_user_registration_path(resource)
-  end
+    def after_sign_up_path_for(resource)
+      flash[:notice] = t('devise.registrations.signed_up_and_edit')
+      edit_user_registration_path(resource)
+    end
 
-  def after_inactive_sign_up_path_for(resource)
-    root_path
-  end
+    def after_inactive_sign_up_path_for(resource)
+      root_path
+    end
 
-  def after_update_path_for(resource)
-    user_path(resource)
-  end
+    def after_update_path_for(resource)
+      user_path(resource)
+    end
 end
