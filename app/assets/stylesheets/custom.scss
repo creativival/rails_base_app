@@ -88,21 +88,9 @@
   position: relative;
   overflow: hidden;
   width: 80px;
-  height: 800px;
+  height: 80px;
   border-radius: 50%;
   border: 5px greenyellow solid;
-}
-
-.user_avatar_large img,
-.user_avatar_middle img,
-.user_avatar_small img {
-  display: block;
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  height: 100%;
-  transform: translateY(-50%);
-  object-fit: cover;
 }
 
  /* Sticky footer styles
