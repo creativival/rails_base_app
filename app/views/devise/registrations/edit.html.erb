@@ -11,7 +11,7 @@
     <%= f.text_area :profile, autofocus: true, autocomplete: "profile" %>
 
     <div class="user_avatar_middle">
-      <% if (@user.avatar) %>
+      <% if (@user.avatar.attached?) %>
         <%= image_tag @user.avatar, class: 'user_avatar' %>
       <% else %>
         <%= image_tag 'unknown.png', class: 'user_avatar' %>
