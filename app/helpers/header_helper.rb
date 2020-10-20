@@ -5,15 +5,15 @@ module HeaderHelper
 
     case link
     when 'top'
-      if (controller == 'static_pages' && action == 'top')
+      if controller == 'static_pages' && action == 'top'
         return ' active'
       end
     when 'sign_in'
-      if (controller == 'users/sessions' && action == 'new')
+      if controller == 'users/sessions' && action == 'new'
         return ' active'
       end
     when 'sign_up'
-      if (controller == 'users/registrations' && action == 'new')
+      if controller == 'users/registrations' && action == 'new'
         return ' active'
       end
     else

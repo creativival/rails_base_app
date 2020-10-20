@@ -2,9 +2,9 @@
   <h1><%= t('.account_info', { name: @user.name }) %></h1>
   <div class="user_avatar_large">
     <% if @user.avatar.attached? %>
-      <%= image_tag @user.display_avatar_large, class: 'user_avatar' %>
+      <%= image_tag display_avatar_large(@user), class: 'user_avatar' %>
     <% else %>
-      <%= image_tag 'unknown.png', class: 'user_avatar' %>
+      <%= image_tag '/unknown/icon240.png', class: 'user_avatar' %>
     <% end %>
   </div>
   <p></p>

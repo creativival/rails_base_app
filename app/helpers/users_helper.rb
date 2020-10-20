@@ -4,9 +4,9 @@ module UsersHelper
     begin
       user.avatar.variant(gravity: :center, resize:"240x240^", crop:"240x240+0+0").processed
     rescue ActiveStorage::FileNotFoundError => e
-      'unknown.png'
+      '/unknown/icon240.png'
     rescue ActiveStorage::InvariableError => e
-      'unknown.png'
+      '/unknown/icon240.png'
     end
   end
 
@@ -14,9 +14,9 @@ module UsersHelper
     begin
       user.avatar.variant(gravity: :center, resize:"120x120^", crop:"120x120+0+0").processed
     rescue ActiveStorage::FileNotFoundError => e
-      'unknown.png'
+      '/unknown/icon120.png'
     rescue ActiveStorage::InvariableError => e
-      'unknown.png'
+      '/unknown/icon120.png'
     end
   end
 
@@ -24,9 +24,9 @@ module UsersHelper
     begin
       user.avatar.variant(gravity: :center, resize:"80x80^", crop:"80x80+0+0").processed
     rescue ActiveStorage::FileNotFoundError => e
-      'unknown.png'
+      '/unknown/icon80.png'
     rescue ActiveStorage::InvariableError => e
-      'unknown.png'
+      '/unknown/icon80.png'
     end
   end
 end

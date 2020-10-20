@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+  before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   # def new
@@ -65,6 +65,21 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   protected
+
+    # サインアップ時にnameのストロングパラメータを追加
+    def configure_sign_up_params
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    end
+
+    # アカウント編集の時にnameとprofileのストロングパラメータを追加
+    def configure_account_update_params
+      devise_parameter_sanitizer.permit(:account_update, keys: [:name, :profile, :avatar])
+    end
+
+    # #必須  更新（編集の反映）時にパスワード入力を省く（current_password を入力して更新するとエラーになる）
+    # def update_resource(resource, params)
+    #   resource.update_without_password(params)
+    # end
 
     def after_sign_up_path_for(resource)
       flash[:notice] = t('devise.registrations.signed_up_and_edit')
