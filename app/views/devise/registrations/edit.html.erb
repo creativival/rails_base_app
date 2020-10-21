@@ -44,3 +44,10 @@
 
   <%= link_to t('devise.shared.links.back'), :back %>
 </div>
+
+<script>
+    $(document).on('change', ':file', function() {
+        const label = $(this).val().replace(/\\/g, '/').replace(/.*\//, '');
+        document.querySelector('.custom-file-label').innerHTML = label;
+    });
+</script>
