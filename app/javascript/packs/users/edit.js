@@ -1,4 +1,4 @@
-const inputFile = document.querySelector('#inputFile');
+const inputFile = document.querySelector('#user_avatar');
 
 inputFile.addEventListener('change', event => {
     // console.log(event.target)
