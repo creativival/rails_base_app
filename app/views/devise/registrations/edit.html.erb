@@ -20,7 +20,15 @@
       <% end %>
     </div>
 
-    <%= f.file_field :avatar %>
+    <%#= f.file_field :avatar # 翻訳のため使用しない %>
+    <div class="form-group">
+      <label for="inputFile"><%= t('.avatar') %></label>
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="inputFile" accept="image/jpeg,image/gif,image/png"
+          data-message="<%= t('.file_size_error') %>" data-label="<%= t('.choose_file') %>">
+        <label class="custom-file-label" for="inputFile" data-browse="<%= t('.browse') %>"><%= t('.choose_file') %></label>
+      </div>
+    </div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div><%= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %></div>
@@ -47,7 +55,16 @@
 
 <script>
     $(document).on('change', ':file', function() {
-        const label = $(this).val().replace(/\\/g, '/').replace(/.*\//, '');
-        document.querySelector('.custom-file-label').innerHTML = label;
+        const size_in_megabytes = this.files[0].size/1024/1024;
+        if (size_in_megabytes > 5) {
+            const message = document.querySelector('#inputFile').dataset.message,
+                default_label = document.querySelector('#inputFile').dataset.label;
+            alert(message);
+            document.querySelector('.custom-file-input').value = '';
+            document.querySelector('.custom-file-label').innerHTML = default_label;
+        } else {
+            const label = $(this).val().replace(/\\/g, '/').replace(/.*\//, '');
+            document.querySelector('.custom-file-label').innerHTML = label;
+        }
     });
 </script>

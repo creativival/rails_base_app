@@ -104,6 +104,11 @@ ja:
         we_need_your_current_password_to_confirm_your_changes: 変更を反映するには現在のパスワードを入力してください
         new_password: 新しいパスワード
         current_password: 現在のパスワード
+        choose_file: ファイルを選択
+        browse: 参照
+        avatar: プロフィール画像
+#        Maximum file size is 5MB. Please choose a smaller file.
+        file_size_error: ファイルサイズが 5 MB 以上です。サイズが小さいファイルを選んでください。
       new:
         sign_up: アカウント登録
         password: パスワード
