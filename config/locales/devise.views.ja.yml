@@ -9,7 +9,7 @@ ja:
         current_password: 現在のパスワード
         current_sign_in_at: 現在のログイン時刻
         current_sign_in_ip: 現在のログインIPアドレス
-        email: Eメール
+        email: メールアドレス
         encrypted_password: 暗号化パスワード
         failed_attempts: 失敗したログイン試行回数
         last_sign_in_at: 最終ログイン時刻
@@ -22,7 +22,7 @@ ja:
         reset_password_sent_at: パスワードリセット送信時刻
         reset_password_token: パスワードリセット用トークン
         sign_in_count: ログイン回数
-        unconfirmed_email: 未確認Eメール
+        unconfirmed_email: 未確認メールアドレス
         unlock_token: ロック解除用トークン
         updated_at: 更新日
         name: 名前
@@ -107,7 +107,7 @@ ja:
         choose_file: ファイルを選択
         browse: 参照
         name: 名前
-        email: Eメール
+        email: メールアドレス
         avatar: プロフィール画像
         profile: プロフィール
 #        Maximum file size is 5MB. Please choose a smaller file.
@@ -168,7 +168,7 @@ ja:
     admin_pages: 管理者ページ
     sign_in: ログイン
     sign_out: ログアウト
-    sign_up: ユーザー登録
+    sign_up: アカウント登録
     account_info: アカウント情報
     account_edit: アカウント情報の編集
     users_list: ユーザ一リスト
@@ -176,7 +176,7 @@ ja:
     show:
       account_info: "%{name}様のアカウント情報"
       name: 名前
-      email: Eメール
+      email: メールアドレス
       profile: プロフィール
       account_edit: アカウント情報の編集
 

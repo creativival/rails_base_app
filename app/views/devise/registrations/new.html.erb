@@ -9,7 +9,7 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
 
     <%= f.password_field :password, autocomplete: "new-password",
-                         label: "#{ t('.password') } <em>#{ t('devise.shared.minimum_password_length', count: @minimum_password_length) }</em>".html_safe %>
+                         label: "#{ t('.password') }<em>#{ t('devise.shared.minimum_password_length', count: @minimum_password_length) }</em>".html_safe %>
 
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
 

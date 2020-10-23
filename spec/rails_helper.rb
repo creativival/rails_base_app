@@ -8,6 +8,10 @@ require File.expand_path('../config/environment', __dir__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
+require 'database_rewinder'
+require 'capybara/rspec'
+require 'support/capybara.rb'
+require 'kconv' # 送信メールの内容チェック等に使用
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -22,7 +26,8 @@ require 'rspec/rails'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-# Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
+ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
@@ -39,7 +44,7 @@ RSpec.configure do |config|
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
-  config.use_transactional_fixtures = true
+  config.use_transactional_fixtures = false
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
@@ -62,13 +67,34 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   # Devise
-  # include Warden::Test::Helpers
+  # login_asメソッドが使えるようにする
+  include Warden::Test::Helpers
 
   # FactoryBot
+  # FactoryBot.xxx が不要になる
   config.include FactoryBot::Syntax::Methods
 
   # Active Storage
   FactoryBot::SyntaxRunner.class_eval do
     include ActionDispatch::TestProcess
   end
+
+  # Database Rewinder
+  # Basic configuration
+  # Do clean in after(:each). And do clean_all or clean_with in before(:suite) if you'd like to.
+  RSpec.configure do |config|
+    config.before(:suite) do
+      DatabaseRewinder.clean_all
+      # or
+      # DatabaseRewinder.clean_with :any_arg_that_would_be_actually_ignored_anyway
+    end
+
+    config.after(:each) do
+      DatabaseRewinder.clean
+    end
+  end
+
+  # Capybara
+  config.include Rails.application.routes.url_helpers
+  config.include Capybara::DSL
 end

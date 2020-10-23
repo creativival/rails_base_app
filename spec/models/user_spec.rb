@@ -37,7 +37,7 @@ RSpec.describe User, type: :model do
             email: '',
         }
         user.save
-        expect(user.errors.full_messages[0]).to eq("Eメールを入力してください")
+        expect(user.errors.full_messages[0]).to eq("メールアドレスを入力してください")
       end
     end
 
@@ -54,6 +54,7 @@ RSpec.describe User, type: :model do
     context "画像ファイルが正しいとき" do
       it "プロフィール画像を添付できる" do
         # user_attached_image.valid?
+        # puts user_attached_image.errors.instance_variables
         # puts user_attached_image.errors.messages
         expect(user_attached_image).to be_valid
       end
@@ -62,9 +63,9 @@ RSpec.describe User, type: :model do
     context "ファイルサイズが10MBを越える時" do
       it "エラーメッセージが返る" do
         user_too_large_avatar.valid?
-        puts user_too_large_avatar.instance_variables
-        puts user_too_large_avatar.errors.instance_variables
-        puts user_too_large_avatar.errors.messages
+        # puts user_too_large_avatar.instance_variables
+        # puts user_too_large_avatar.errors.instance_variables
+        # puts user_too_large_avatar.errors.messages
         expect(user_too_large_avatar.errors[:avatar]).to include 'ファイルサイズが大きすぎます。'
       end
     end

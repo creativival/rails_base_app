@@ -1,10 +1,10 @@
 Capybara.register_driver :headless_chrome do |app|
   chrome_options = Selenium::WebDriver::Chrome::Options.new
-  chrome_options.args << '--headless' # headlessを解除するにはコメントアウトすること
+  # chrome_options.args << '--headless' # headlessを解除するにはコメントアウトすること
   chrome_options.args << '--disable-gpu'
 
   driver = Capybara::Selenium::Driver.new(app, browser: :chrome, options: chrome_options)
-  driver.browser.manage.window.size = Selenium::WebDriver::Dimension.new(3000, 2000)
+  driver.browser.manage.window.size = Selenium::WebDriver::Dimension.new(1200, 2000)
   driver
 end
 
