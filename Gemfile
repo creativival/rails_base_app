@@ -23,7 +23,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Active Storage
-gem 'mini_magick', '~> 4.8'
+# gem 'mini_magick', '~> 4.8'
+gem 'image_processing', '~> 1.2'
 gem 'active_storage_validations'
 gem "aws-sdk-s3", require: false
 
