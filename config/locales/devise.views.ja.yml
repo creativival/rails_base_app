@@ -98,7 +98,7 @@ ja:
         cancel_my_account: アカウント削除
         currently_waiting_confirmation_for_email: "%{email} の確認待ち"
         leave_blank_if_you_don_t_want_to_change_it: 空欄のままなら変更しません
-        title: アカウント変更
+        title: アカウント情報の編集
         unhappy: 気に入りません
         update: 更新
         we_need_your_current_password_to_confirm_your_changes: 変更を反映するには現在のパスワードを入力してください
@@ -106,9 +106,12 @@ ja:
         current_password: 現在のパスワード
         choose_file: ファイルを選択
         browse: 参照
+        name: 名前
+        email: Eメール
         avatar: プロフィール画像
+        profile: プロフィール
 #        Maximum file size is 5MB. Please choose a smaller file.
-        file_size_error: ファイルサイズが 5 MB 以上です。サイズが小さいファイルを選んでください。
+        file_size_error: ファイルサイズが大きすぎます。
       new:
         sign_up: アカウント登録
         password: パスワード
@@ -152,8 +155,12 @@ ja:
       not_saved:
         one: エラーが発生したため %{resource} は保存されませんでした。
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
-      file_too_large: ファイルが大きすぎます (5 MB 以下)。
-      file_type_not_image: 画像ファイルを選択してください（jpeg, png, gif）。
+      file_too_large: ファイルサイズが大きすぎます。
+      file_type_not_image: ファイルが対応している画像データではありません。
+  common:
+    required: 必須
+    characters_or_less: 文字以下
+    mb_or_less: MB 以下
   header:
     title: Sample App
     home: ホーム
@@ -163,7 +170,7 @@ ja:
     sign_out: ログアウト
     sign_up: ユーザー登録
     account_info: アカウント情報
-    account_edit: アカウント変更
+    account_edit: アカウント情報の編集
     users_list: ユーザ一リスト
   users:
     show:
@@ -171,5 +178,6 @@ ja:
       name: 名前
       email: Eメール
       profile: プロフィール
+      account_edit: アカウント情報の編集
 
 

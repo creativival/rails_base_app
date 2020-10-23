@@ -11,4 +11,6 @@
   <p><%= t('.name') %>: <%= @user.name %></p>
   <p><%= t('.email') %>: <%= @user.email %></p>
   <p><%= t('.profile') %>: <%= @user.profile %></p>
+
+  <%= link_to t('.account_edit'), edit_user_registration_path, class: "btn btn-outline-secondary btn-sm" %>
 </div>

@@ -3,6 +3,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
   before_action :configure_account_update_params, only: [:update]
+  before_action :get_profile_max_length, only: [:edit]
 
   # GET /resource/sign_up
   # def new
@@ -75,6 +76,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     def configure_account_update_params
       devise_parameter_sanitizer.permit(:account_update, keys: [:name, :profile, :avatar])
     end
+
+  def get_profile_max_length
+    @profile_max_length = Settings.user.profile_max_length
+  end
 
     # #必須  更新（編集の反映）時にパスワード入力を省く（current_password を入力して更新するとエラーになる）
     # def update_resource(resource, params)

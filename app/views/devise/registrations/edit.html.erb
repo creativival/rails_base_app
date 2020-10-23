@@ -6,11 +6,14 @@
 
     <%#= f.hidden_field :id, value: @user.id %>
 
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name",
+                    label: "#{ t('.name') } <span class=\"badge badge-danger\">#{ t('common.required') }</span>".html_safe %>
 
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",
+                      label: "#{ t('.email') } <span class=\"badge badge-danger\">#{ t('common.required') }</span>".html_safe %>
 
-    <%= f.text_area :profile, autofocus: true, autocomplete: "profile" %>
+    <%= f.text_area :profile, autofocus: true, autocomplete: "profile",
+                    label: "#{ t('.profile') } (#{ @profile_max_length } #{ t('common.characters_or_less') })" %>
 
     <div class="user_avatar_middle">
       <% if @user.avatar.attached? %>
@@ -22,7 +25,7 @@
 
     <%#= f.file_field :avatar %>
     <div class="form-group">
-      <label for="user_avatar"><%= t('.avatar') %></label>
+      <label for="user_avatar"><%= "#{t('.avatar')} (5 #{ t('common.mb_or_less') })" %></label>
       <div class="custom-file">
         <input type="file" name="user[avatar]" class="custom-file-input" id="user_avatar" accept="image/jpeg,image/gif,image/png"
           data-message="<%= t('.file_size_error') %>" data-default-label="<%= t('.choose_file') %>">
@@ -41,7 +44,7 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
 
     <%= f.password_field :current_password, autocomplete: "current-password",
-                         label: "#{ t('.current_password') } <i>(#{ t('.we_need_your_current_password_to_confirm_your_changes') })</i>".html_safe %>
+                         label: "#{ t('.current_password') }  <span class=\"badge badge-danger\">#{ t('common.required') }</span> <i>(#{ t('.we_need_your_current_password_to_confirm_your_changes') })</i>".html_safe %>
 
     <%= f.submit t('.update') %>
   <% end %>
@@ -50,7 +53,7 @@
 
   <p><%= t('.unhappy') %> <%= button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete %></p>
 
-  <%= link_to t('devise.shared.links.back'), :back %>
+  <%= link_to t('devise.shared.links.back'), :back, class: "btn btn-outline-secondary btn-sm" %>
 </div>
 
 <%= javascript_pack_tag 'users/edit' %>
