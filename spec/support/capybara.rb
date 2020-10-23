@@ -11,5 +11,6 @@ end
 Capybara.javascript_driver = :headless_chrome
 Capybara.default_max_wait_time = 5
 Capybara.server = :puma, { Silent: true }
+Capybara.server_port = "3001"
 
 
