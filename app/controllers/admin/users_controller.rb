@@ -51,5 +51,18 @@ module Admin
       avatar.purge
       redirect_back(fallback_location: requested_resource)
     end
+
+    # default sort を指定する
+    def order
+      @order ||= Administrate::Order.new(
+          params.fetch(resource_name, {}).fetch(:order, default_sort[:order]),
+          params.fetch(resource_name, {}).fetch(:direction, default_sort[:direction]),
+          )
+    end
+
+    # override this in specific controllers as needed
+    def default_sort
+      { order: :id, direction: :desc }
+    end
   end
 end
