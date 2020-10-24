@@ -157,6 +157,7 @@ ja:
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
       file_too_large: ファイルサイズが大きすぎます。
       file_type_not_image: ファイルが対応している画像データではありません。
+      not_admin: 管理者のみ閲覧可能なページです。詳しくは管理者にお問い合わせください。
   common:
     required: 必須
     characters_or_less: 文字以下
@@ -172,6 +173,7 @@ ja:
     account_info: アカウント情報
     account_edit: アカウント情報の編集
     users_list: ユーザ一リスト
+    management_page: 管理画面
   users:
     show:
       account_info: "%{name}様のアカウント情報"

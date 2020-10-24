@@ -14,7 +14,7 @@ User.create!(name: 'admin',
              email: 'admin@example.com',
              password: 'password',
              confirmed_at: Time.current,
-             # role: 1, # admin
+             role: 1, # admin
              )
 
 # Facker
@@ -26,6 +26,6 @@ User.create!(name: 'admin',
                email: email,
                password: password,
                confirmed_at: Time.current,
-               # role: 0,
+               role: 0,
                )
   end

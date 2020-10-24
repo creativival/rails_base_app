@@ -12,4 +12,7 @@ class User < ApplicationRecord
                             message: I18n.t('errors.messages.file_too_large') }
 
   has_one_attached :avatar
+
+  # admin
+  enum role: { user: 0, admin: 1 }
 end
