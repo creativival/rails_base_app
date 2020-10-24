@@ -69,12 +69,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     # サインアップ時にnameのストロングパラメータを追加
     def configure_sign_up_params
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :role])
     end
 
     # アカウント編集の時にnameとprofileのストロングパラメータを追加
     def configure_account_update_params
-      devise_parameter_sanitizer.permit(:account_update, keys: [:name, :profile, :avatar])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:name, :profile, :avatar, :role])
     end
 
   def get_profile_max_length

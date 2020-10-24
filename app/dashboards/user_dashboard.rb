@@ -25,6 +25,7 @@ class UserDashboard < Administrate::BaseDashboard
     confirmed_at: Field::DateTime,
     confirmation_sent_at: Field::DateTime,
     unconfirmed_email: Field::String,
+    role: Field::Select.with_options(collection: User.roles.keys)
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -37,6 +38,7 @@ class UserDashboard < Administrate::BaseDashboard
   id
   email
   name
+  role
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -57,6 +59,7 @@ class UserDashboard < Administrate::BaseDashboard
   confirmed_at
   confirmation_sent_at
   unconfirmed_email
+  role
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -75,6 +78,7 @@ class UserDashboard < Administrate::BaseDashboard
   confirmed_at
   confirmation_sent_at
   unconfirmed_email
+  role
   ].freeze
 
   # COLLECTION_FILTERS
