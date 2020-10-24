@@ -23,10 +23,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   # Administrate
-  route  namespace :admin do
+  namespace :admin do
+    # Add dashboard for your models here
     resources :users
 
-    root to: "users#index"
+    # root to: "users#index" # <--- Root route
   end
 
 end
