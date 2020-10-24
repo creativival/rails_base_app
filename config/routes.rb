@@ -25,7 +25,9 @@ Rails.application.routes.draw do
   # Administrate
   namespace :admin do
     # Add dashboard for your models here
-    resources :users
+    resources :users do
+      delete :avatars, on: :member, action: :destroy_avatar
+    end
 
     # root to: "users#index" # <--- Root route
   end

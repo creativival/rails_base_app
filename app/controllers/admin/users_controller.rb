@@ -42,5 +42,14 @@ module Admin
 
     # See https://administrate-prototype.herokuapp.com/customizing_controller_actions
     # for more information
+
+    # For illustrative purposes only.
+    #
+    # **SECURITY NOTICE**: first verify whether current user is authorized to perform the action.
+    def destroy_avatar
+      avatar = requested_resource.avatars.find(params[:attachment_id])
+      avatar.purge
+      redirect_back(fallback_location: requested_resource)
+    end
   end
 end
