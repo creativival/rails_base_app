@@ -27,7 +27,7 @@ RSpec.describe User, type: :model do
             name: '',
         }
         model_test.save
-        expect(model_test.errors.full_messages[0]).to eq("名前を入力してください")
+        expect(model_test.errors.full_messages[0]).to eq "名前を入力してください"
       end
     end
 
@@ -37,7 +37,7 @@ RSpec.describe User, type: :model do
             email: '',
         }
         model_test.save
-        expect(model_test.errors.full_messages[0]).to eq("メールアドレスを入力してください")
+        expect(model_test.errors.full_messages[0]).to eq "メールアドレスを入力してください"
       end
     end
 
@@ -47,20 +47,20 @@ RSpec.describe User, type: :model do
             profile: 'a' * 241,
         }
         model_test.save
-        expect(model_test.errors.full_messages[0]).to eq("プロフィールは240文字以内で入力してください")
+        expect(model_test.errors.full_messages[0]).to eq "プロフィールは240文字以内で入力してください"
       end
     end
 
     context ':role=>admin のとき' do
       it "管理者に設定できる" do
-        expect(model_test.user?).to eq(true)
-        expect(model_test.admin?).to eq(false)
+        expect(model_test.user?).to eq true
+        expect(model_test.admin?).to eq false
         model_test.attributes = {
             role: 'admin'
         }
         model_test.save
-        expect(model_test.user?).to eq(false)
-        expect(model_test.admin?).to eq(true)
+        expect(model_test.user?).to eq false
+        expect(model_test.admin?).to eq true
       end
     end
 
