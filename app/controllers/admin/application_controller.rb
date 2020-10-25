@@ -10,10 +10,13 @@ module Admin
 
     def authenticate_admin
       # TODO Add authentication logic here.
-      unless (user_signed_in? && current_user.admin?)
+      if !user_signed_in?
+        flash[:alert] = I18n.t('errors.messages.require_login')
+        redirect_to new_user_session_path
+      elsif !current_user.admin?
         flash[:alert] = I18n.t('errors.messages.not_admin')
         redirect_to '/'
-        debugger
+        # debugger
       end
     end
 

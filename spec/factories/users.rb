@@ -1,7 +1,7 @@
 FactoryBot.define do
-  factory :user, class: User do
-    name { 'user' }
-    email { "user@example.com" }
+  factory :model_test, class: User do
+    name { 'model_test' }
+    email { "model_test@example.com" }
     password { 'password' }
     confirmed_at { Time.current }
   end
@@ -13,6 +13,7 @@ FactoryBot.define do
       email { "#{ user }@example.com" }
       password { 'password' }
       confirmed_at { Time.current }
+      role { i == 1 ? 'admin' : 'user' }
     end
   end
 
