@@ -97,4 +97,15 @@ RSpec.configure do |config|
   # Capybara
   config.include Rails.application.routes.url_helpers
   config.include Capybara::DSL
+
+  # Rspec Retry
+  # 実行中にリトライのステータスを表示する
+  config.verbose_retry = true
+  # リトライの原因となった例外を表示する
+  config.display_try_failure_messages = true
+
+  # js: true のフィーチャスペックのみリトライを有効にする
+  config.around :each, :js do |ex|
+    ex.run_with_retry retry: 3
+  end
 end

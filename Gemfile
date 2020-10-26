@@ -72,6 +72,7 @@ group :test do
   # gem 'chromedriver-help
   gem 'webdrivers'
   gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-retry'
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
   gem 'database_rewinder'
